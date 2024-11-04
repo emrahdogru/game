@@ -27,6 +27,7 @@ namespace War.Server.Domain.ObjectSets
         public static Milk Milk { get; } = new();
         public static Cattle Cattle { get; } = new();
         public static Sheep Sheep { get; } = new();
+        public static Chicken Chicken { get; } = new();
         public static Fertilizer Fertilizer { get; } = new();
         #endregion
 

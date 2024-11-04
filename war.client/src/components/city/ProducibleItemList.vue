@@ -9,7 +9,7 @@ var emits = defineEmits(["itemSelect"])
 
 const onItemSelect = function (item) {
     model.value = item;
-    emits.$emit('itemSelect', item);
+    emits('itemSelect', item);
 }
 </script>
 <template>

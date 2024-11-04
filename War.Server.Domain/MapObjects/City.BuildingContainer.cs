@@ -21,7 +21,8 @@ namespace War.Server.Domain.MapObjects
         [BsonKnownTypes(
             typeof(BuildingContainerNone),
             typeof(BuildingContainerContinious),
-            typeof(BuildingContainerSequental)
+            typeof(BuildingContainerSequental),
+            typeof(BuildingContainerBreeding)
             )]
         public abstract class BuildingContainer
         {
@@ -47,6 +48,7 @@ namespace War.Server.Domain.MapObjects
                     BuildingObject.BuildingProductionType.None => new BuildingContainerNone(),
                     BuildingObject.BuildingProductionType.Sequental => new BuildingContainerSequental(),
                     BuildingObject.BuildingProductionType.Continious => new BuildingContainerContinious(),
+                    BuildingObject.BuildingProductionType.Breeding => new BuildingContainerBreeding(),
                     _ => throw new NotImplementedException($"`{building.ProductionType}` üretim tipi için tanımlı container yok.")
                 };
 

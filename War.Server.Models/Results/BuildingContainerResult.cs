@@ -37,6 +37,7 @@ namespace War.Server.Models.Results
                 nameof(BuildingContainerContinious) => new BuildingContainerContiniousResult((BuildingContainerContinious)bc),
                 nameof(BuildingContainerSequental) => new BuildingContainerSequentalResult((BuildingContainerSequental)bc),
                 nameof(BuildingContainerNone) => new BuildingContainerNoneResult((BuildingContainerNone)bc),
+                nameof(BuildingContainerBreeding) => new BuildingContainerBreedingResult((BuildingContainerBreeding)bc),
                 _ => throw new NotImplementedException($"Result type is not defined for type`{bc.GetType().FullName}`")
             };
         }
@@ -54,6 +55,20 @@ namespace War.Server.Models.Results
 
         public string? ProductKey => bc.Product?.Key;
         public int DurationPerItem => Convert.ToInt32(bc.DurationPerItem.TotalSeconds);
+    }
+
+    public class BuildingContainerBreedingResult : BuildingContainerResult
+    {
+        private BuildingContainerBreeding bc;
+
+        public BuildingContainerBreedingResult(BuildingContainerBreeding bc)
+            : base(bc)
+        {
+            this.bc = bc;
+        }
+
+        public string? ProductKey => bc.Product?.Key;
+        public int DurationPerItem => 100;  // TODO Burayı düzelt!
     }
 
     public class BuildingContainerSequentalResult: BuildingContainerResult

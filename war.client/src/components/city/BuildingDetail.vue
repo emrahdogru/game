@@ -4,6 +4,7 @@ import { computed, ref } from 'vue';
 import ProductionContinious from './ProductionContinious.vue';
 import ProductionSequental from './ProductionSequental.vue';
 import ProductionNone from './ProductionNone.vue';
+import ProductionBreeding from './ProductionBreeding.vue';
 import WorkerPanel from './WorkerPanel.vue';
 
 
@@ -41,4 +42,8 @@ const buildingContainer = computed(() => {
     <ProductionNone :city="city" @cityChanged="$emit('cityChanged')" :key="props.buildingContainerId"
         :building-container-id="props.buildingContainerId" v-if="buildingContainer.building.productionType == 'None'">
     </ProductionNone>
+    <ProductionBreeding :city="city" @cityChanged="$emit('cityChanged')" :key="props.buildingContainerId"
+        :building-container-id="props.buildingContainerId"
+        v-if="buildingContainer.building.productionType == 'Breeding'">
+    </ProductionBreeding>
 </template>
